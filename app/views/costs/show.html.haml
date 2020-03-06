@@ -1,0 +1,5 @@
+= @cost.date
+= @cost.name
+= simple_format(@cost.description)
+= link_to "編集", edit_cost_path(@cost.id)
+= link_to "削除", cost_path(@cost.id), method: :delete, data: { confirm: "本当に削除しますか？"}

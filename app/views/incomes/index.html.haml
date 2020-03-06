@@ -1,0 +1,25 @@
+%nav.navbar.navbar-dark.bg-dark
+  .navbar-brand
+    %span.navbar-brand.mb-0.h1 収入一覧
+  .nav
+    %form.form-inlin.d-flex.p-2.bd-highlight
+      %a{href: new_income_path, class: 'nav-link'}
+        %button.btn.btn-outline-success 新規記帳
+      %a{href: root_path, class: 'nav-link'}
+        %button.btn.btn-sm.btn-outline-secondary 戻る
+.p-3.mb-2.bg-secondary.text-white
+  .container
+    .table-responsive
+      %table.table.table-striped.table-dark
+        %thead
+          %tr
+            %th{scope: "col"}= "日付"
+            %th{scope: "col"}= "科目名"
+            %th{scope: "col"}= "金額"
+            %th{scope: "col"}= "詳細"
+            - @incomes.each do |income|
+              %tr{scope: "row"}
+                %td= income.date
+                %td= income.name
+                %td= number_to_currency(income.price, locales: 'jp')
+                %td= link_to "詳細", income_path(income.id), method: :get

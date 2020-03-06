@@ -1,0 +1,3 @@
+%h2 支出編集ページ
+= form_with model: @cost, url: {controller: 'costs', action: 'update' }, local: true do |form|
+  = render partial: "form", locals: { form: form }

@@ -1,0 +1,7 @@
+%nav.navbar.navbar-dark.bg-dark
+  .navbar-brand
+    %span.navbar-brand.mb-0.h 収入編集ページ
+.p-3.mb-2.bg-secondary.text-white
+  .container
+    = form_with model: @income, url: {controller: 'incomes', action: 'update' }, local: true do |form|
+      = render partial: "form", locals: { form: form }

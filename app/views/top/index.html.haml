@@ -1,0 +1,17 @@
+%h1 トップページ
+%h3 収支一覧
+%ul
+  %li
+    = link_to "収入一覧", incomes_path
+  %li
+    = link_to "支出一覧", costs_path
+%h3 新規記帳
+%ul
+  %li
+    = link_to "収入記帳", new_income_path
+  %li
+    = link_to "支出記帳", new_cost_path
+%h3 収支確認
+%ul
+  %li
+    = link_to "収支グラフ", balance_chart_index_path

@@ -1,0 +1,5 @@
+= @income.date
+= @income.name
+= simple_format(@income.description)
+= link_to "編集", edit_income_path(@income.id)
+= link_to "削除", income_path(@income.id), method: :delete, data: { confirm: "本当に削除しますか？"}

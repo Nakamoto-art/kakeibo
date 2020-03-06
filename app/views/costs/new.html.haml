@@ -1,0 +1,7 @@
+%nav.navbar.navbar-dark.bg-dark
+  .navbar-brand
+    %span.navbar-brand.mb-0.h1 支出記帳ページ
+.p-3.mb-2.bg-secondary.text-white
+  .container
+    = form_with model: @cost, local: true do |form|
+      = render partial: "form", locals: { form: form }
