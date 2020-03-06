@@ -2,7 +2,7 @@ class CostsController < ApplicationController
   before_action :set_cost, only: [:show, :edit, :update]
 
   def index
-    @costs = Cost.order(created_at: :desc)
+    @costs = Cost.order(date: :desc)
   end
 
   def new
