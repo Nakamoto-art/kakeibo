@@ -36,12 +36,14 @@ window.draw_graph = ->
                 backgroundColor: cost_bgColors,
                 borderColor: cost_bdColors,
                 borderWidth: 1
+                type: 'bar'
             }, {
                 label: '差額',
                 data: gon.results_data,
                 backgroundColor: result_bgColors,
                 borderColor: result_bdColors,
                 borderWidth: 1
+                type: 'bar'
             }
             ]
         },
