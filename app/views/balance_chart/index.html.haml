@@ -1,5 +1,10 @@
-%h1 ChartSample#index
-%p Find me in app/views/chart_sample/index.html.erb
-%canvas#myChart {height: "200", width: "100"}
-:javascript
-  draw_graph();
+%nav.navbar.navbar-dark.bg-dark
+  .navbar-brand
+    %span.navbar-brand.mb-0.h2 年間収支グラフ
+= form_tag({controller: :balance_chart, action: :show_year}, {method: :post}) do
+  %input{name: "year", type: "hidden"}
+  %select{name: "year"}
+    - 2015.upto(2050) do |n|
+      %option{value: n.to_s}
+        = n
+  %input{type: "submit"}

@@ -1,0 +1,2 @@
+class PieChartController < ApplicationController
+end
