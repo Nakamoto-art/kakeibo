@@ -8,7 +8,6 @@ class BalanceChartController < ApplicationController
     year_months = months.map do |month|
       @year + "-" + month + "-01"
     end
-    puts year_months
 
     i = 0
     total = [nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,nil]
