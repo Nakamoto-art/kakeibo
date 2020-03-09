@@ -3,6 +3,9 @@ class CostsController < ApplicationController
 
   def index
     @costs = Cost.order(date: :desc)
+    if params[:name].present?
+      @costs = @costs.get_by_name params[:name]
+    end
   end
 
   def new

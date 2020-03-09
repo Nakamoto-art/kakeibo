@@ -3,6 +3,9 @@ class IncomesController < ApplicationController
 
   def index
     @incomes = Income.order(date: :desc)
+    if params[:name].present?
+      @incomes = @incomes.get_by_name params[:name]
+    end
   end
 
   def new
