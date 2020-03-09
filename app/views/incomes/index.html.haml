@@ -7,6 +7,13 @@
         %button.btn.btn-outline-success 新規記帳
       %a{href: root_path, class: 'nav-link'}
         %button.btn.btn-sm.btn-outline-secondary 戻る
+    .search-form
+      = form_with(scope: :search, url: incomes_path, method: :get, local: true) do |f|
+        .field
+          = label_tag :name, "科目名：", class: "navbar-brand mb-0"
+          = select_tag :name, options_for_select(Income.names), include_blank: true
+          = submit_tag "検索", name: nil, class: "btn btn-outline-success my-2 my-sm-0"
+
 .p-3.mb-2.bg-secondary.text-white
   .container
     .table-responsive
