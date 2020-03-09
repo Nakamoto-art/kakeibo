@@ -41,8 +41,8 @@ class BalanceChartController < ApplicationController
     balance_differences = [nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,nil]
     gon.results_data = [nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,nil]
 		0.upto(11) do |i|
-			if incomes_total[i].present? && costs_total[i].present?
-				balance_differences[i] = incomes_total[i] - costs_total[i]
+      if incomes_total[i].present? && costs_total[i].present?
+        balance_differences[i] = incomes_total[i] - costs_total[i]
         gon.results_data[i] = balance_differences[i]
 			end
 		end
