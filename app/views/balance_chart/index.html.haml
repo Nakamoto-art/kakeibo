@@ -1,10 +1,17 @@
 %nav.navbar.navbar-dark.bg-dark
   .navbar-brand
     %span.navbar-brand.mb-0.h2 年間収支グラフ
-= form_tag({controller: :balance_chart, action: :show_year}, {method: :post}) do
-  %input{name: "year", type: "hidden"}
-  %select{name: "year"}
-    - 2015.upto(2050) do |n|
-      %option{value: n.to_s}
-        = n
-  %input{type: "submit"}
+  .nav
+    %form.form-inlin.d-flex.p-2.bd-highlight
+      %a{href: root_path, class: 'nav-link'}
+        %button.btn.btn-sm.btn-outline-secondary 戻る
+.p-3.mb-2.bg-secondary.text-white
+  .container
+    = "確認したい年度を選択してください"
+    = form_tag({controller: :balance_chart, action: :show_year}, {method: :post}) do
+      %input{name: "year", type: "hidden"}
+      %select{name: "year"}
+        - 2015.upto(2050) do |n|
+          %option{value: n.to_s}
+            = n
+      %input{type: "submit"}
