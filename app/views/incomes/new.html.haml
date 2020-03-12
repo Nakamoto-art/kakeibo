@@ -1,6 +1,10 @@
 %nav.navbar.navbar-dark.bg-dark
   .navbar-brand
     %span.navbar-brand.mb-0.h1 収入記帳ページ
+  .nav
+    %form.form-inlin.d-flex.p-2.bd-highlight
+      %a{href: incomes_path, class: 'nav-link'}
+        %button.btn.btn-sm.btn-outline-secondary 一覧へ
 .p-3.mb-2.bg-secondary.text-white
   .container
     = form_with model: @income, local: true do |form|

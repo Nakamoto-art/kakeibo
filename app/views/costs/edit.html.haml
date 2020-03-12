@@ -1,3 +1,11 @@
-%h2 支出編集ページ
-= form_with model: @cost, url: {controller: 'costs', action: 'update' }, local: true do |form|
-  = render partial: "form", locals: { form: form }
+%nav.navbar.navbar-dark.bg-dark
+  .navbar-brand
+    %span.navbar-brand.mb-0.h 支出編集ページ
+  .nav
+    %form.form-inlin.d-flex.p-2.bd-highlight
+      %a{href: costs_path, class: 'nav-link'}
+        %button.btn.btn-sm.btn-outline-secondary 一覧へ
+.p-3.mb-2.bg-secondary.text-white
+  .container
+    = form_with model: @cost, url: {controller: 'costs', action: 'update' }, local: true do |form|
+      = render partial: "form", locals: { form: form }
