@@ -8,4 +8,8 @@ class Cost < ApplicationRecord
 
   scope :get_by_name, ->(name){where(name:name)}
 
+  validates :date, presence: true
+  validates :name, presence: true
+  validates :price, presence: true
+
 end
