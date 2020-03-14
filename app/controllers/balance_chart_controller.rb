@@ -8,7 +8,6 @@ class BalanceChartController < ApplicationController
     year_months = months.map do |month|
       @year + "-" + month + "-01"
     end
-    puts year_months
 
     i = 0
     total = [nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,nil]
@@ -41,11 +40,11 @@ class BalanceChartController < ApplicationController
     balance_differences = [nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,nil]
     gon.results_data = [nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,nil]
 		0.upto(11) do |i|
-			if incomes_total[i].present? && costs_total[i].present?
-				balance_differences[i] = incomes_total[i] - costs_total[i]
+      if incomes_total[i].present? && costs_total[i].present?
+        balance_differences[i] = incomes_total[i] - costs_total[i]
         gon.results_data[i] = balance_differences[i]
-			end
-		end
+      end
+    end
   end
 
 
