@@ -6,12 +6,13 @@
       %a{href: root_path, class: 'nav-link'}
         %button.btn.btn-sm.btn-outline-secondary 戻る
 .p-3.mb-2.bg-secondary.text-white
-  .container
-    = "確認したい年度を選択してください"
-    = form_tag({controller: :balance_chart, action: :show_year}, {method: :post}) do
-      %input{name: "year", type: "hidden"}
-      %select{name: "year"}
-        - 2015.upto(2050) do |n|
-          %option{value: n.to_s}
-            = n
-      %input{type: "submit"}
+  .container.p-4
+    .h4 確認したい年度を選択してください
+    .p-4
+      = form_tag({controller: :balance_chart, action: :show_year}, {method: :post}) do
+        %input{name: "year", type: "hidden"}
+        %select{name: "year"}
+          - 2015.upto(2050) do |n|
+            %option{value: n.to_s}
+              = n
+        %input{type: "submit"}

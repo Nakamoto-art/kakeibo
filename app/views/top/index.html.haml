@@ -1,16 +1,21 @@
 .text-center
   .cover-container.d-flex.h-100.mx-auto.flex-column
-    .masthead.md-auto.bg-dark
+    .masthead.md-auto.bg-dark{style: "height: 100px;"}
       .mb-0.text-white.h1 トップページ
-    .p-3.mb-2.bg-secondary.text-white
-      .h2.cover-heading 収支一覧
-      .list-group
-        %a.list-group-item.list-group-item-action{href: incomes_path}収入一覧
-        %a.list-group-item.list-group-item-action{href: costs_path}支出一覧
-      .h2.cover-heading 新規記帳
-      .list-group
-        %a.list-group-item.list-group-item-action{href: new_income_path}収入新規記帳
-        %a.list-group-item.list-group-item-action{href: new_cost_path}支出新規記帳
-      .h2.cover-heading 収支確認
-      .list-group
-        %a.list-group-item.list-group-item-action{href: balance_chart_path, method: :get}棒グラフ
+    .bg-info
+      .container
+        .p-5.bg-secondary.text-white.mb-auto
+          .mb-5
+            .h2.cover-heading 収支一覧
+            .list-group
+              %a.list-group-item.list-group-item-action{href: incomes_path}収入一覧
+              %a.list-group-item.list-group-item-action{href: costs_path}支出一覧
+          .mb-5
+            .h2.cover-heading 新規記帳
+            .list-group
+              %a.list-group-item.list-group-item-action{href: new_income_path}収入新規記帳
+              %a.list-group-item.list-group-item-action{href: new_cost_path}支出新規記帳
+          .mb-5
+            .h2.cover-heading 収支確認
+            .list-group
+            %a.list-group-item.list-group-item-action{href: balance_chart_path, method: :get}棒グラフ
