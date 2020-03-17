@@ -8,4 +8,13 @@ class Cost < ApplicationRecord
 
   scope :get_by_name, ->(name){where(name:name)}
 
+  validates :date, presence: true
+  validates :date, format: { with: /\d/ }
+
+  validates :name, presence: true
+  validates :name, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
+
+  validates :price, presence: true
+  validates :price,format: { with: /\d/ }
+
 end

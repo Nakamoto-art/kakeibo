@@ -15,7 +15,7 @@ class IncomesController < ApplicationController
   def create
     @income = Income.new(income_params)
     if @income.save
-      redirect_to incomes_path, notice: "登録しました"
+      redirect_to incomes_path
     else
       render :new
     end

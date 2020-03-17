@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    models:
+      income: 収入
+      cost: 支出
+    attributes:
+      income:
+        date: 日付
+        name: 科目名
+        price: 金額
+        description: 備考

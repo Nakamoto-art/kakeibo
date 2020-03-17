@@ -47,6 +47,8 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'pry-doc'
+  gem 'rspec-rails', '~> 3.6'
+  gem "factory_bot_rails"
 end
 
 group :development do
@@ -73,3 +75,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
+gem 'rails-i18n'
