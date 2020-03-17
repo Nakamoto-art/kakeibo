@@ -9,4 +9,8 @@
   .container
     = form_with model: @cost, url: {controller: 'costs', action: 'update' }, local: true do |form|
       = render 'layouts/error_messages', model: form.object
+        %button.btn.btn-sm.btn-outline-secondary 一覧へ
+.p-3.mb-2.bg-info.text-white
+  .container
+    = form_with model: @cost, url: {controller: 'costs', action: 'update' }, local: true do |form|
       = render partial: "form", locals: { form: form }

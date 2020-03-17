@@ -2,17 +2,17 @@
   .navbar-brand
     %span.navbar-brand.mb-0.h1 支出一覧
   .nav
-    %form.form-inlin.d-flex.p-2.bd-highlight
-      %a{href: new_cost_path, class: 'nav-link'}
-        %button.btn.btn-outline-success 新規記帳
-      %a{href: root_path, class: 'nav-link'}
-        %button.btn.btn-sm.btn-outline-secondary 戻る
-    .search-form
+    .search-form.form-inlin.d-flex.p-2.bd-highlight
       = form_with(scope: :search, url: costs_path, method: :get, local: true) do |f|
         .field
           = label_tag :name, "科目名：", class: "navbar-brand mb-0"
           = select_tag :name, options_for_select(Cost.names), include_blank: true
           = submit_tag "検索", name: nil, class: "btn btn-outline-success my-2 my-sm-0"
+    %form.form-inlin.d-flex.p-2.bd-highlight
+      %a{href: new_cost_path, class: 'nav-link'}
+        %button.btn.btn-outline-success 新規記帳
+      %a{href: root_path, class: 'nav-link'}
+        %button.btn.btn-sm.btn-outline-secondary 戻る
 
 .p-3.mb-2.bg-secondary.text-white
   .container
@@ -23,7 +23,6 @@
             %th{scope: "col"}= "日付"
             %th{scope: "col"}= "科目名"
             %th{scope: "col"}= "金額"
-            %th{scope: "col"}= "備考"
             %th{scope: "col"}= "ボタン"
             - @costs.each do |cost|
               %tr{scope: "row"}
@@ -31,4 +30,5 @@
                 %td= cost.name
                 %td= number_to_currency(cost.price, format: "%u%n", unit: '¥', strip_insignificant_zeros: true)
                 %td= cost.description
+                %td= number_to_currency(cost.price, locales: 'jp', strip_insignificant_zeros: true)
                 %td= link_to "詳細", cost_path(cost.id), method: :get

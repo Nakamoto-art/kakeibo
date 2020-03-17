@@ -16,5 +16,7 @@ class Cost < ApplicationRecord
 
   validates :price, presence: true
   validates :price,format: { with: /\d/ }
+  validates :name, presence: true
+  validates :price, presence: true
 
 end

@@ -1,18 +1,18 @@
-%nav.navbar.navbar-dark.bg-dark
+%nav.navbar.navbar-dark.bg-dark{style: "height: 100px;"}
   .navbar-brand
     %span.navbar-brand.mb-0.h1 収入一覧
   .nav
-    %form.form-inlin.d-flex.p-2.bd-highlight
-      %a{href: new_income_path, class: 'nav-link'}
-        %button.btn.btn-outline-success 新規記帳
-      %a{href: root_path, class: 'nav-link'}
-        %button.btn.btn-sm.btn-outline-secondary 戻る
-    .search-form
+    .search-form.form-inlin.d-flex.p-2.bd-highlight
       = form_with(scope: :search, url: incomes_path, method: :get, local: true) do |f|
         .field
           = label_tag :name, "科目名：", class: "navbar-brand mb-0"
           = select_tag :name, options_for_select(Income.names), include_blank: true
           = submit_tag "検索", name: nil, class: "btn btn-outline-success my-2 my-sm-0"
+    %form.form-inlin.d-flex.p-2.bd-highlight
+      %a{href: new_income_path, class: 'nav-link'}
+        %button.btn.btn-outline-success 新規記帳
+      %a{href: root_path, class: 'nav-link'}
+        %button.btn.btn-sm.btn-outline-secondary 戻る
 
 .p-3.mb-2.bg-secondary.text-white
   .container
