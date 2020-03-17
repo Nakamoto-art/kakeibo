@@ -28,5 +28,5 @@
               %tr{scope: "row"}
                 %td= income.date.strftime('%Y年%m月')
                 %td= income.name
-                %td= number_to_currency(income.price, locales: 'jp', strip_insignificant_zeros: true)
+                %td= number_to_currency(income.price, format: "%u%n", unit: '¥', strip_insignificant_zeros: true)
                 %td= link_to "詳細", income_path(income.id), method: :get

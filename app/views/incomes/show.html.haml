@@ -1,5 +1,17 @@
 %nav.navbar.navbar-dark.bg-dark
   .navbar-brand
+    %span.navbar-brand.mb-0.h1 詳細ページ
+  .nav
+    %form.form-inlin.d-flex.p-2.bd-highlight
+      %a{href: incomes_path, class: 'nav-link'}
+        %button.btn.btn-sm.btn-outline-secondary 戻る
+.p-3.mb-2.bg-secondary.text-white
+  .container
+    = @income.date
+    = @income.name
+    = simple_format(@income.description)
+    = link_to "編集", edit_income_path(@income.id)
+    = link_to "削除", income_path(@income.id), method: :delete, data: { confirm: "本当に削除しますか？"}
     %span.navbar-brand.mb-0.h 収入詳細ページ
   .nav
     %a{href: incomes_path, class: 'nav-link'}

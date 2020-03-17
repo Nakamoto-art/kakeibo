@@ -1,3 +1,24 @@
+.field
+  = form.label :"日付"
+  %span.text-danger 必須
+  %br/
+  = form.date_select :date, start_year: 2015, end_year: Time.current.year, use_month_numbers: true, discard_day: true, default: @year_month, class: 'w-auto p-3'
+.field
+  = form.label :"科目名"
+  %span.text-danger 必須
+  %br/
+  = form.select :name, Cost.names.keys, {}
+.field
+  = form.label :"金額"
+  %span.text-danger 必須
+  %br/
+  = form.text_field :price
+.field
+  = form.label :"備考"
+  %br/
+  = form.text_area :description, class: 'w-100 p-3'
+.actions
+  = form.submit "保存する"
 .bg-secondary.mx-auto{style: "height: 100%;"}
   .container
     .field.p-3.h4
