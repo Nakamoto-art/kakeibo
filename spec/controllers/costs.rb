@@ -35,6 +35,20 @@ describe CostsController do
     end
   end
 
+  describe 'GET #show' do
+    it "変数@costの確認" do
+      cost = create(:cost)
+      get :show, params: {id: cost}
+      expect(assigns(:cost)).to eq cost
+    end
+
+    it "ページ遷移の確認" do
+      cost = create(:cost)
+      get :show, params: {id: cost}
+      expect(response).to render_template :show
+    end
+  end
+
   describe 'POST #create' do
     it "データベースへの保存確認" do
       cost_params = attributes_for(:cost)
@@ -45,6 +59,14 @@ describe CostsController do
       cost_params = attributes_for(:cost)
       post :create, params: {cost: cost_params}
       expect(response).to redirect_to costs_path
+    end
+  end
+
+
+  describe 'delete #destroy' do
+    it "costの削除" do
+      cost = create(:cost)
+      expect{delete :destroy, params: {id: cost}}.to change(Cost, :count).by(-1)
     end
   end
 end
