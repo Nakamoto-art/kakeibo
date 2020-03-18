@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :income do
-    date        {"2020-03-01"}
+    date        {Faker::Date.between_except(from: 3.years.ago, to: 1.year.from_now, excepted: Date.today)}
     name        {"給与"}
     price       {"300000"}
     description {"テストです"}
