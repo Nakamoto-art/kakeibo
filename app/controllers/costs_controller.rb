@@ -1,4 +1,5 @@
 class CostsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_cost, only: [:show, :edit, :update]
 
   def index

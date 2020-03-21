@@ -1,4 +1,6 @@
 class Cost < ApplicationRecord
+  belongs_to :user
+
   REGISTRABLE_ATTRIBUTES = %i(
     date
     year(1i) month(2i)
