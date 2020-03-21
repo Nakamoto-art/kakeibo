@@ -1,9 +1,13 @@
 .text-center
   .cover-container.d-flex.h-100.mx-auto.flex-column
-    .masthead.md-auto.bg-dark{style: "height: 100px;"}
-      .mb-0.text-white.h1 トップページ
+    .masthead.md-auto.bg-dark
+      .mb-0.text-white.h1
+        トップページ
         %br/
-        
+        .h5
+          "#{current_user.nickname}" 様としてログイン中
+          %a{href: destroy_user_session_path, method: :delete, class: 'nav-link'}
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn btn-outline-success'
     .bg-info
       .container
         .p-5.bg-secondary.text-white.mb-auto
