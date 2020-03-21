@@ -5,6 +5,7 @@ class CreateCosts < ActiveRecord::Migration[5.2]
       t.integer :name, null: false, default: 0, limit: 1
       t.integer :price, null: false
       t.text :description
+      t.references :user, foreign_key: true
       t.timestamps
     end
   end

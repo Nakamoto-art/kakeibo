@@ -1,5 +1,5 @@
 class Cost < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
 
   REGISTRABLE_ATTRIBUTES = %i(
     date

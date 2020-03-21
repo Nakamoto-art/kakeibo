@@ -3,7 +3,7 @@ class IncomesController < ApplicationController
   before_action :set_income, only: [:show, :edit, :update]
 
   def index
-    @incomes = Income.order(date: :desc)
+    @incomes = Income.where(user_id: current_user).order(date: :desc)
     if params[:name].present?
       @incomes = @incomes.get_by_name params[:name]
     end
@@ -44,7 +44,7 @@ class IncomesController < ApplicationController
 
   private
   def income_params
-    params.require(:income).permit(Income::REGISTRABLE_ATTRIBUTES, :name, :price, :description)
+    params.require(:income).permit(Income::REGISTRABLE_ATTRIBUTES, :name, :price, :description).merge(user_id: current_user.id)
   end
 
   def set_income

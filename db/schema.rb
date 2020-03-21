@@ -10,15 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_19_035509) do
+ActiveRecord::Schema.define(version: 2020_02_29_114247) do
 
   create_table "costs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "date", null: false
     t.integer "name", limit: 1, default: 0, null: false
     t.integer "price", null: false
     t.text "description"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_costs_on_user_id"
   end
 
   create_table "incomes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -26,27 +28,25 @@ ActiveRecord::Schema.define(version: 2020_03_19_035509) do
     t.integer "name", limit: 1, default: 0, null: false
     t.integer "price", null: false
     t.text "description"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_incomes_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.bigint "income_id"
-    t.bigint "cost_id"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["cost_id"], name: "index_users_on_cost_id"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["income_id"], name: "index_users_on_income_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "users", "costs"
-  add_foreign_key "users", "incomes"
+  add_foreign_key "costs", "users"
+  add_foreign_key "incomes", "users"
 end
