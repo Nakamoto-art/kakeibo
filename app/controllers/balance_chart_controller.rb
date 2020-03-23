@@ -15,7 +15,7 @@ class BalanceChartController < ApplicationController
     total = [nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,nil]
     gon.incomes_data = [nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,nil,nil]
     year_months.each do |year_month|
-      incomes = Income.where(date: year_month)
+      incomes = Income.where(date: year_month, user_id: current_user.id)
       if incomes.present?
         total[i] = sum_income(incomes)
         gon.incomes_data[i] = total[i]

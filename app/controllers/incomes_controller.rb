@@ -3,7 +3,7 @@ class IncomesController < ApplicationController
   before_action :set_income, only: [:show, :edit, :update]
 
   def index
-    @incomes = Income.where(user_id: current_user).order(date: :desc)
+    @incomes = Income.where(user_id: current_user.id).order(date: :desc)
     if params[:name].present?
       @incomes = @incomes.get_by_name params[:name]
     end
