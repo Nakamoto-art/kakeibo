@@ -1,6 +1,10 @@
 %nav.navbar.navbar-dark.bg-dark
   .navbar-brand
     %span.navbar-brand.mb-0.h1 新規登録画面
+  .nav
+    %form.form-inlin.d-flex.p-2.bd-highlight
+      %a{href: new_user_session_path, class: 'nav-link'}
+        %button.btn.btn-outline-success ログイン
 .p-5.bg-info.text-white
   .container
     .bg-secondary.mx-auto
@@ -25,6 +29,5 @@
           = f.label :password_confirmation
           %br/
           = f.password_field :password_confirmation, autocomplete: "new-password"
-        .d-flex
-          .actions.p-3.h4
-            = f.submit "新規登録"
+        .actions.p-3.h4
+          = f.submit "新規登録"

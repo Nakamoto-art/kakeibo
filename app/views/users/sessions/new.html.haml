@@ -1,6 +1,10 @@
 %nav.navbar.navbar-dark.bg-dark
   .navbar-brand
     %span.navbar-brand.mb-0.h1 ログイン画面
+  .nav
+    %form.form-inlin.d-flex.p-2.bd-highlight
+      %a{href: new_user_registration_path, class: 'nav-link'}
+        %button.btn.btn-outline-success 新規登録
 .p-5.bg-info.text-white
   .container
     .bg-secondary.mx-auto
@@ -19,5 +23,3 @@
             = f.label :remember_me
         .actions.p-4.h4
           = f.submit "ログイン"
-        
-      = render "users/shared/links"

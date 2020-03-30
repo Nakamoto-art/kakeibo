@@ -25,3 +25,8 @@
             .h2.cover-heading 収支確認
             .list-group
             %a.list-group-item.list-group-item-action{href: balance_chart_path, method: :get}棒グラフ
+          .mb-5
+            .h2.cover-heading アカウント
+            .list-group
+              %a.list-group-item.list-group-item-action{href: destroy_user_session_path, method: :delete}ログアウト
+              %a.list-group-item.list-group-item-action{href: edit_user_registration_path}アカウント編集

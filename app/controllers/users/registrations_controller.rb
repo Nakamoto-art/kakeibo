@@ -3,12 +3,11 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
-  before_action :set_user, only: [:edit, :update]
 
   # GET /resource/sign_up
-  def new
-    @user = User.new
-  end
+  # def new
+  #   @user = User.new
+  # end
 
   # POST /resource
   # def create
@@ -16,13 +15,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # GET /resource/edit
-  def edit
-    if @user.update(user_params)
-      redirect_to root_path
-    else
-      render "edit"
-    end
-  end
+  # def edit
+  # end
 
   # PUT /resource
   # def update
@@ -43,10 +37,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  protected
-  def set_user
-    @user = User.find(params[:id])
-  end
+  # protected
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
