@@ -1,27 +1,68 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# ツール・ライブラリの名前
 
-Things you may want to cover:
+Kakeibo
 
-* Ruby version
+## 簡単な説明
 
-* System dependencies
+家計簿アプリになります。日々の収入・支出を記録して、
+グラフにていくらほど貯蓄できたかを視覚的にわかりやすくしました。
+これにより、利用者が将来いくら必要になるのかといった計画を立てる際にお役に立ちます。
 
-* Configuration
+***デモ***
 
-* Database creation
+![デモ](https://18.180.92.45)
 
-* Database initialization
+## 機能
 
-* How to run the test suite
+- 機能1（UI/計算 etc ...）
+- 機能2
+- 機能3
+- ...
 
-* Services (job queues, cache servers, search engines, etc.)
+他の機能はこちらを参照して下さい。`awesome-tool --help`.
 
-* Deployment instructions
+## 必要要件
 
-* ...
+- 要件
+- 要件
+- 要件
+- ...
+
+## 使い方
+
+1. 使い方
+2. 使い方
+3. 使い方
+
+## インストール
+
+```
+$ git clone https://github.com/TomoakiTANAKA/awesome-tool
+$ cd awesome-tool
+$ sh setup.sh
+$ ~do anything~
+```
+
+## テスト
+
+1. 使い方
+2. 使い方
+3. 使い方
+
+## デプロイ
+
+1. デプロイ
+2. デプロイ
+3. デプロイ
+
+
+## 作者
+
+email: oesatoshi@gmail.com
+
+
 # データベース設計
 
 ## usersテーブル
