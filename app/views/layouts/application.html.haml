@@ -8,7 +8,10 @@
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %link{:href => "https://use.fontawesome.com/releases/v5.6.1/css/all.css", :rel => "stylesheet"}/
   %body
     = yield
     %footer.bottom.bg-dark{style: "height: 120px;"}
-      .text-white.h2.mx-auto{style: "width: 130px;"} Kakeibo
+      .d-flex.mx-auto{style: "width: 130px;"}
+        %i.fas.fa-calculator.pt-2.text-white
+        .text-white.h2.ml-2 Kakeibo

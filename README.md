@@ -12,7 +12,7 @@ Kakeibo
 
 ***デモ***
 
-![デモ](https://18.180.92.45)
+![デモ](URL: http://18.180.92.45/)
 
 ## 機能
 
@@ -59,7 +59,6 @@ $ ~do anything~
 
 
 ## 作者
-
 email: oesatoshi@gmail.com
 
 
