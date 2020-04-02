@@ -32,5 +32,4 @@
                     %td= cost.name
                     %td= number_to_currency(cost.price, format: "%u%n", unit: '¥', strip_insignificant_zeros: true)
                     %td= cost.description
-                    %td= number_to_currency(cost.price, locales: 'jp', strip_insignificant_zeros: true)
                     %td= link_to "詳細", cost_path(cost.id), method: :get
