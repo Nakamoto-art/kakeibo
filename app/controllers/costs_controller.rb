@@ -16,7 +16,7 @@ class CostsController < ApplicationController
   def create
     @cost = Cost.create(cost_params)
     if @cost.save
-      redirect_to costs_path, notice: "#{@cost.name} を登録しました"
+      redirect_to costs_path
     else
       render :new
     end

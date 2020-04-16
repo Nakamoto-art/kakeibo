@@ -43,10 +43,6 @@ email: aaa@aaa
 パスワード: 111111
 
 
-## 作者
-email: oesatoshi@gmail.com
-
-
 # データベース設計
 
 ## usersテーブル
